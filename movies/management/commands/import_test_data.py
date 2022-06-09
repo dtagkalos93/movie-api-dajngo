@@ -3,7 +3,7 @@ from random import randrange
 from django.core.management import BaseCommand
 
 from account.models import User
-from movies.models import Review, Movie
+from movies.models import Movie, Review
 
 
 class Command(BaseCommand):
@@ -14,7 +14,6 @@ class Command(BaseCommand):
             "ACTION",
             "ADVENTURE",
             "THRILLER",
-
         ]
         self.create_movies_with_out_reviews(genres)
         self.create_movies_with_reviews(genres)
@@ -31,7 +30,6 @@ class Command(BaseCommand):
             "Batman",
             "Superman",
             "Wonder Woman",
-
         ]
         for x in range(0, 3):
             Movie.objects.create(

@@ -1,2 +1,2 @@
-from .review import ReviewViewSet
 from .movies import MoviesViewSet
+from .review import ReviewViewSet

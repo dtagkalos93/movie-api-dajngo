@@ -1,7 +1,6 @@
 from django.test import Client
 from rest_framework import status
 
-
 from movies.models import Movie, Review
 from movies.test.base import MoviesBaseTestCase
 
@@ -14,7 +13,6 @@ class MoviesApiTestCase(MoviesBaseTestCase):
             plot="This is a test plot",
             genres="Action",
             duration="2h",
-
         )
         response = Client().get("/movies/")
 
@@ -62,7 +60,7 @@ class MoviesApiTestCase(MoviesBaseTestCase):
             image="foo/bar.gr",
             title="Test 1",
             plot="This is a test plot",
-            genres="Action"
+            genres="Action",
         )
         review = Review.objects.create(movie=movie, score=4)
         response = self.client.get("/movies/")
@@ -91,7 +89,7 @@ class MoviesApiTestCase(MoviesBaseTestCase):
             image="foo/bar.gr",
             title="Test 1",
             plot="This is a test plot",
-            genres="Action"
+            genres="Action",
         )
         review = Review.objects.create(movie=movie, score=4)
         review_2 = Review.objects.create(movie=movie, score=5)

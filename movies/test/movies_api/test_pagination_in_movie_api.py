@@ -33,7 +33,7 @@ class PaginationInUnitApiTestCase(MoviesBaseTestCase):
         self.assertIsNone(data["previous"])
         self.assertDictEqual(
             {
-                 "id": self.movie.pk,
+                "id": self.movie.pk,
                 "image": self.movie.image,
                 "title": self.movie.title,
                 "plot": self.movie.plot,
@@ -45,7 +45,7 @@ class PaginationInUnitApiTestCase(MoviesBaseTestCase):
         )
         self.assertDictEqual(
             {
-                 "id": self.movie_2.pk,
+                "id": self.movie_2.pk,
                 "image": self.movie_2.image,
                 "title": self.movie_2.title,
                 "plot": self.movie_2.plot,

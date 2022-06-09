@@ -2,7 +2,6 @@ from django.db import models
 from rest_framework import filters, viewsets
 from rest_framework.permissions import IsAuthenticated
 
-
 from movies.filters.movie_order_filter import MovieOrderFilter
 from movies.models import Movie
 from movies.paginators.movie_paginator import MoviePagination

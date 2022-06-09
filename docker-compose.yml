@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/Dockerfile
+    image: movies_app
+    restart: unless-stopped
+    container_name: django-movie
+    ports:
+      - "8002:8000"

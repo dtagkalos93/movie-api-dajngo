@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "movie-api-django"
+version = "0.1.0"
+description = ""
+authors = ["Dimitris Tagkalos <tagkalos@orfium.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.13.1"
+Markdown = "^3.3.6"
+django-filter = "^21.1"
+Django = "^4.0"
+PyJWT = "^2.3.0"
+djangorestframework-simplejwt = "^5.0.0"
+gunicorn = "^20.1.0"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.16.0"
+pylint = "^2.12.2"
+black = "^21.12b0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+#Pre-Commit Config
+[tool.pylint.MESSAGE_CONTROL]
+disable = """
+    line-too-long,
+    abstract-method,
+    no-member,
+"""
+enable = "useless-suppression"
+
+[tool.pylint.REPORTS]
+reports="no"
+
+[tool.pylint.FORMAT]
+max-line-length="88"
+
+[tool.pylint.BASIC]
+good-names = "_,i,e,setUp,tearDown,maxDiff"
+
+#Black Config
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+
+#Isort Config
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+default_section = "THIRDPARTY"
+known_first_party = []
+known_third_party = []
